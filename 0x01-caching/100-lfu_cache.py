@@ -19,10 +19,10 @@ class LFUCache(BaseCaching):
         else:
             len_num = len(self.cache_data)
             if len_num >= BaseCaching.MAX_ITEMS and key not in self.cache_data:
-                l = min(self.frequency.values())
+                ll = min(self.frequency.values())
                 lfu_ks = []
                 for k, val in self.frequency.items():
-                    if val == l:
+                    if val == ll:
                         lfu_ks.append(k)
                 if len(lfu_ks) > 1:
                     lr_lfu = {}
